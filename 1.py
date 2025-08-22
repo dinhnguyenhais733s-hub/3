@@ -10,12 +10,15 @@ image = (
     .pip_install("cupy-cuda12x")
 )
 
+# Cookie Modal (gắn trực tiếp)
+COOKIE = "se-rz7speTQeduihcEQLADMgZ:xx-zm6wpKL5MwGm0jVy6OYdZ4"
+
 # Hàm chính chạy tool
 def run_tool():
     repo_url = "https://github.com/vudeptrai79007-sketch/tool.git"
     repo_dir = "tool"
 
-    # Nếu chưa có repo thì mới clone
+    # Nếu chưa có repo thì clone
     if not os.path.exists(repo_dir):
         print("🔄 Đang clone repo lần đầu...")
         subprocess.run(["git", "clone", repo_url], check=True)
@@ -26,15 +29,19 @@ def run_tool():
     while True:
         try:
             print("🚀 Khởi động Node app.js ...")
+            env = os.environ.copy()
+            env["MODAL_SESSION"] = COOKIE   # truyền cookie vào Node.js qua ENV
+
             process = subprocess.Popen(
                 ["node", "app.js"],
                 cwd=repo_dir,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
-                text=True
+                text=True,
+                env=env
             )
 
-            # Đọc log liên tục thay vì wait treo
+            # Đọc log Node.js liên tục
             for line in process.stdout:
                 print(line, end="")
 
