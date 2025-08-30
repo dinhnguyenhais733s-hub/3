@@ -2,7 +2,13 @@ import requests
 import time
 
 # Dán nguyên vẹn cookies vào đây
-cookies = { 'ajs_anonymous_id': '9c814b12-9d9f-415a-8417-50ec58f3e4cc', 'modal-session': 'se-7V2JMv6X574EDL94SDtlZN:xx-TEvfVWnQ0clhNLBzf4yfaM', 'INGRESSCOOKIE': '1756546522.504.830.894269|9de6a539c14bab7f9073ed2b75abad44', 'ajs_user_id': 'us-9SODla46dkR3y26sLQ7F03', 'ph_phc_kkmXwgjY4ZQBwJ6fQ9Q6DaLLOz1bG44LtZH0rAhg1NJ_posthog': '%7B%22distinct_id%22%3A%22us-9SODla46dkR3y26sLQ7F03%22%2C%22%24sesid%22%3A%5B1756550053960%2C%220198fa54-e0da-7dad-86b7-3826090bb916%22%2C1756546523354%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fmodal.com%2Fsignup%3Fnext%3D%252Fplayground%22%7D%7D', }
+cookies = {
+    'ajs_anonymous_id': '9c814b12-9d9f-415a-8417-50ec58f3e4cc',
+    'modal-session': 'se-7V2JMv6X574EDL94SDtlZN:xx-TEvfVWnQ0clhNLBzf4yfaM',
+    'INGRESSCOOKIE': '1756546522.504.830.894269|9de6a539c14bab7f9073ed2b75abad44',
+    'ajs_user_id': 'us-9SODla46dkR3y26sLQ7F03',
+    'ph_phc_kkmXwgjY4ZQBwJ6fQ9Q6DaLLOz1bG44LtZH0rAhg1NJ_posthog': '''%7B%22distinct_id%22%3A%22us-9SODla46dkR3y26sLQ7F03%22%2C%22%24sesid%22%3A%5B1756550053960%2C%220198fa54-e0da-7dad-86b7-3826090bb916%22%2C1756546523354%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fmodal.com%2Fsignup%3Fnext%3D%252Fplayground%22%7D%7D''',
+}
 
 # Headers cho yêu cầu HTTP
 headers = {
@@ -90,4 +96,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+   
 
